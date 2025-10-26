@@ -1,0 +1,7 @@
+Flask==3.0.0
+torch==2.2.1
+diffusers==0.25.0
+bcrypt==4.1.2
+sqlite3==0.0.1
+twilio==8.1.0
+gunicorn==21.2.0  # Optional, for deployment

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ first_name }}</h2>
+        <form action="{{ url_for('generate') }}" method="POST">
+            <input type="text" name="prompt" placeholder="Enter a text prompt" required>
+            <button type="submit">Generate Image</button>
+        </form>
+        <a href="{{ url_for('history') }}">View History</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

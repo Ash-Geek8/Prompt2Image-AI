@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Generated Images</h2>
+        <div class="image-gallery">
+            {% for img in images %}
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='generated_images/' + img) }}" alt="Generated Image">
+                <form action="{{ url_for('delete_image', filename=img) }}" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('home') }}">Back</a>
+    </div>
+</body>
+</html>
